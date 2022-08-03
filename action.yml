@@ -1,0 +1,12 @@
+# action.yml
+name: 'Run cppcheck'
+description: 'Run cppcheck static analyzer'
+inputs:
+  script_path:
+    description: 'Path to script'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.script_path }}
